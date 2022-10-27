@@ -136,11 +136,11 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 //   console.log(ctx.params)
   const { name } = params as {name: string};
  // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg
- const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ name }`);
+ //const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ name }`);
   return {
     props: {
-      pokemon: data
-     //pokemon: await getPokemonInfo( name )
+     // pokemon: data
+     pokemon: await getPokemonInfo( name )
     }
   }
 }

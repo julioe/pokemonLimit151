@@ -4,12 +4,13 @@
 //- The data can be publicly cached (not user-specific).
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 import { GetStaticProps, NextPage } from 'next';
-import { Button, Card, Grid, Text, Row } from "@nextui-org/react";
+import {  Grid,  } from "@nextui-org/react";
 
 import { pokeApi } from '../api';
 import { Layout } from '../components/layouts';
 import { PokemonListResponse, SmallPokemon } from '../interfaces';
 import { PokemonCard } from '../components/pokemon';
+import Image from 'next/image';
 
 interface Props {
   pokemons: SmallPokemon[ ];
@@ -19,6 +20,7 @@ const HomePage: NextPage<Props> = ({ pokemons }  ) => {
 
   return (
     <Layout title= 'Listado de Pokemons'>
+     
       <Grid.Container gap={ 2 } justify='flex-start' >
     
          {

@@ -141,13 +141,13 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 export const getStaticProps: GetStaticProps = async ({params}) => {
 //   console.log(ctx.params)
   const { id } = params as {id: string};
-  const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ id }`);
+  //const { data } = await pokeApi.get<Pokemon>(`/pokemon/${ id }`);
 
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg
   return {
     props: {
-      pokemon: data
-     //pokemon: await getPokemonInfo( id )
+     // pokemon: data
+     pokemon: await getPokemonInfo( id )
     }
   }
 }
